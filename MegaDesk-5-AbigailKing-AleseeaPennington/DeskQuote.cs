@@ -135,5 +135,11 @@ namespace MegaDesk_3_AbigailKing
 
             return FINAL_PRICE;
         }
+
+        public string GetRushOrder()
+        {
+            string values = "";
+            return values;
+        }
     }
 }
