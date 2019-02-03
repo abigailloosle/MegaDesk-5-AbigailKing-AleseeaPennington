@@ -102,7 +102,7 @@
             this.Controls.Add(this.btnViewQuote);
             this.Controls.Add(this.btnAddQuote);
             this.Name = "MainMenu";
-            this.Text = "Form1";
+            this.Text = "Build Your MegaDesk";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
