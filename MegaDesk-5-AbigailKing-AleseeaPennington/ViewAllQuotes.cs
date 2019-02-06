@@ -36,18 +36,18 @@ namespace MegaDesk_3_AbigailKing
         {
             try
             {
-                List<DeskQuote> deskQuotes = new List<DeskQuote>();
-                Console.WriteLine("Desk Quotes: " + deskQuotes);
-
                 using (StreamReader reader = new StreamReader(@"quotes.json"))
                 {
                     string allQuotes = reader.ReadToEnd();
-                    Console.WriteLine("All Quotes: " + allQuotes);
+                    //Console.WriteLine("All Quotes: " + allQuotes);
+
+                    List<DeskQuote> deskQuotes = new List<DeskQuote>();
+                    //Console.WriteLine("Desk Quotes: " + deskQuotes);
 
                     deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(allQuotes);
-                    Console.WriteLine("Desk Quotes: " + deskQuotes);
+                    //Console.WriteLine("Desk Quotes: " + deskQuotes);
+                    
 
-                    /*I think that the error is after this...*/
                     dataGridView1.DataSource = deskQuotes.Select(d => new
                     {
                         QuoteDate = d.QuoteDate,
@@ -59,7 +59,7 @@ namespace MegaDesk_3_AbigailKing
                         DeliveryType = d.DeliveryType,
                         QuoteAmount = d.QuoteAmount
                     }).ToList();
-                    Console.WriteLine("Data Grid View 1: " + deskQuotes);
+                    //Console.WriteLine("Data Grid View 1: " + deskQuotes);
                 }
             }
             catch (FileNotFoundException)

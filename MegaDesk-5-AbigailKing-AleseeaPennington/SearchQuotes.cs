@@ -80,16 +80,16 @@ namespace MegaDesk_3_AbigailKing
             {
 
                 List<DeskQuote> deskQuotes = new List<DeskQuote>();
-                Console.WriteLine("Desk Quotes: " + deskQuotes);
+                //Console.WriteLine("Desk Quotes: " + deskQuotes);
 
                 using (StreamReader reader = new StreamReader(@"quotes.json"))
                 {
                     string search = comboSurfaceSearch.SelectedValue.ToString();
                     string allQuotes = reader.ReadToEnd();
-                    Console.WriteLine("All Quotes: " + allQuotes);
+                    //Console.WriteLine("All Quotes: " + allQuotes);
 
                     deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(allQuotes);
-                    Console.WriteLine("Desk Quotes: " + deskQuotes);
+                    //Console.WriteLine("Desk Quotes: " + deskQuotes);
 
                     /*I think that the error is after this...*/
                     dataGridView1.DataSource = deskQuotes.Select(d => new
@@ -105,7 +105,7 @@ namespace MegaDesk_3_AbigailKing
                     })
                     .Where(q => q.Material.ToString() == search)
                     .ToList();
-                    Console.WriteLine("Data Grid View 1: " + deskQuotes);
+                   // Console.WriteLine("Data Grid View 1: " + deskQuotes);
                 }
             }
             catch (FileNotFoundException)
