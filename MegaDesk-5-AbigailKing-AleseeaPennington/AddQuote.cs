@@ -95,7 +95,7 @@ namespace MegaDesk_3_AbigailKing
 
         private void AddQuoteToFile(DeskQuote deskQuote)
         {
-            string quotesFile = @"quotes.txt";
+            string quotesFile = @"quotes.Json";
 
             using (StreamWriter streamWriter = File.AppendText(quotesFile))
             {
