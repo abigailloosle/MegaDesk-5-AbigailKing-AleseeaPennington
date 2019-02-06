@@ -48,9 +48,10 @@
             // btnCancelSearch
             // 
             this.btnCancelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelSearch.Location = new System.Drawing.Point(553, 396);
+            this.btnCancelSearch.Location = new System.Drawing.Point(737, 487);
+            this.btnCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelSearch.Name = "btnCancelSearch";
-            this.btnCancelSearch.Size = new System.Drawing.Size(250, 88);
+            this.btnCancelSearch.Size = new System.Drawing.Size(333, 108);
             this.btnCancelSearch.TabIndex = 0;
             this.btnCancelSearch.Text = "Cancel";
             this.btnCancelSearch.UseVisualStyleBackColor = true;
@@ -69,9 +70,10 @@
             this.surface_Material,
             this.delivery,
             this.quote_Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 79);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 97);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(1124, 369);
             this.dataGridView1.TabIndex = 2;
             // 
             // Quote_Date
@@ -118,9 +120,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(129, 22);
+            this.label1.Location = new System.Drawing.Point(172, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 29);
+            this.label1.Size = new System.Drawing.Size(109, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "Search";
             // 
@@ -128,9 +131,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(131, 57);
+            this.label13.Location = new System.Drawing.Point(175, 70);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(144, 13);
+            this.label13.Size = new System.Drawing.Size(191, 17);
             this.label13.TabIndex = 5;
             this.label13.Text = "Based off of Surface Material";
             // 
@@ -138,16 +142,18 @@
             // 
             this.comboSurfaceSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSurfaceSearch.FormattingEnabled = true;
-            this.comboSurfaceSearch.Location = new System.Drawing.Point(238, 19);
+            this.comboSurfaceSearch.Location = new System.Drawing.Point(317, 23);
+            this.comboSurfaceSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboSurfaceSearch.Name = "comboSurfaceSearch";
-            this.comboSurfaceSearch.Size = new System.Drawing.Size(270, 37);
+            this.comboSurfaceSearch.Size = new System.Drawing.Size(359, 44);
             this.comboSurfaceSearch.TabIndex = 6;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(527, 14);
+            this.btnSearch.Location = new System.Drawing.Point(703, 17);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(148, 42);
+            this.btnSearch.Size = new System.Drawing.Size(197, 52);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -155,18 +161,20 @@
             // 
             // SearchQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 505);
+            this.ClientSize = new System.Drawing.Size(1201, 622);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.comboSurfaceSearch);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancelSearch);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchQuotes_FormClosing);
+            this.Load += new System.EventHandler(this.SearchQuotes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

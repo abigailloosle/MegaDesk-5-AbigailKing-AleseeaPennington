@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDesk_3_AbigailKing
 {
@@ -47,7 +48,7 @@ namespace MegaDesk_3_AbigailKing
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            try
+           /* try
             {
 
                 dataGridView1.Rows.Clear();
@@ -65,6 +66,46 @@ namespace MegaDesk_3_AbigailKing
                             dataGridView1.Rows.Add(arrRow);
                         }
                     };
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("No desk quotes have been created yet.");
+            }*/
+        }
+
+        private void SearchQuotes_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+                List<DeskQuote> deskQuotes = new List<DeskQuote>();
+                Console.WriteLine("Desk Quotes: " + deskQuotes);
+
+                using (StreamReader reader = new StreamReader(@"quotes.json"))
+                {
+                    string search = comboSurfaceSearch.SelectedValue.ToString();
+                    string allQuotes = reader.ReadToEnd();
+                    Console.WriteLine("All Quotes: " + allQuotes);
+
+                    deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(allQuotes);
+                    Console.WriteLine("Desk Quotes: " + deskQuotes);
+
+                    /*I think that the error is after this...*/
+                    dataGridView1.DataSource = deskQuotes.Select(d => new
+                    {
+                        Date = d.QuoteDate,
+                        Customer = d.CustomerName,
+                        DeskDepth = d.Desk.Depth,
+                        DeskWidth = d.Desk.Width,
+                        NumDrawers = d.Desk.Drawers,
+                        Material = d.Desk.SurfaceMaterial,
+                        Delivery = d.DeliveryType,
+                        Amount = d.QuoteAmount
+                    })
+                    .Where(q => q.Material.ToString() == search)
+                    .ToList();
+                    Console.WriteLine("Data Grid View 1: " + deskQuotes);
                 }
             }
             catch (FileNotFoundException)

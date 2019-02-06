@@ -1,0 +1,26 @@
+[
+  {
+    "Desk": {
+      "Width": 24.0,
+      "Depth": 12.0,
+      "Drawers": 3,
+      "SurfaceMaterial": 2
+    },
+    "CustomerName": "Joseph",
+    "QuoteDate": "2019-02-08T14:11:49.360673-07:00",
+    "DeliveryType": 0,
+    "QuoteAmount": 710.0
+  },
+  {
+    "Desk": {
+      "Width": 36.0,
+      "Depth": 18.0,
+      "Drawers": 7,
+      "SurfaceMaterial": 3
+    },
+    "CustomerName": "Paul",
+    "QuoteDate": "2019-02-08T14:12:11.8753509-07:00",
+    "DeliveryType": 2,
+    "QuoteAmount": 705.00
+  }
+]

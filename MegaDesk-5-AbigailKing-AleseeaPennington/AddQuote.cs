@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDesk_3_AbigailKing
 {
@@ -87,7 +88,7 @@ namespace MegaDesk_3_AbigailKing
             }
             catch (Exception err)
             {
-                MessageBox.Show("There was an error creating the quote. {0}", err.Message);
+                MessageBox.Show(@"There was an error creating the quote. { err.Message }");
             }
         
 
@@ -95,9 +96,32 @@ namespace MegaDesk_3_AbigailKing
 
         private void AddQuoteToFile(DeskQuote deskQuote)
         {
-            string quotesFile = @"quotes.Json";
+            //string quotesFile = @"quotes.json";
+            
 
-            using (StreamWriter streamWriter = File.AppendText(quotesFile))
+            List<DeskQuote> deskQuotes = new List<DeskQuote>();
+
+            if (!File.Exists(@"quotes.json")) {
+                deskQuotes.Add(deskQuote);
+                var convertedJson = JsonConvert.SerializeObject(deskQuotes);
+
+                File.WriteAllText(@"quotes.json", convertedJson);
+            }
+            else
+            {
+                using (StreamReader reader = new StreamReader(@"quotes.json"))
+                {
+                    string allQuotes = reader.ReadToEnd();
+                    deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(allQuotes);
+
+                }
+                deskQuotes.Add(deskQuote);
+                var convertedJson = JsonConvert.SerializeObject(deskQuotes, Formatting.Indented);
+
+                File.WriteAllText(@"quotes.json", convertedJson);
+            }
+
+            /*using (StreamWriter streamWriter = File.AppendText(quotesFile))
             {
                 streamWriter.WriteLine(
                     $"{deskQuote.QuoteDate}," +
@@ -108,7 +132,7 @@ namespace MegaDesk_3_AbigailKing
                     $"{deskQuote.Desk.SurfaceMaterial}," +
                     $"{deskQuote.DeliveryType}," +
                     $"{deskQuote.QuoteAmount}");
-            }
+            }*/
         }
     }
 }
