@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MegaDesk_3_AbigailKing
 {
@@ -136,10 +137,31 @@ namespace MegaDesk_3_AbigailKing
             return FINAL_PRICE;
         }
 
-        public string GetRushOrder()
+        public static void GetRushOrder()
         {
-            string values = "";
-            return values;
+            StreamReader reader = new StreamReader(@"rushOrderPrices.txt");
+
+            List<string[]> grid = new List<string[]>();
+
+            while (reader.EndOfStream == false)
+            {
+                string values = reader.ReadLine();
+                //grid.Add(values);
+
+                //if (values.Length =< 3)
+                //{
+
+                //}
+            }
+            reader.Close();
+
+            //string[] lines = File.ReadAllLines(@"rushOrderPrices.txt");
+
+            //List<string[]> grid = new List<string[]>();
+
+            //populate the grid
+            //foreach (var line in lines) grid.Add(lines.Rea);
+
         }
     }
 }
