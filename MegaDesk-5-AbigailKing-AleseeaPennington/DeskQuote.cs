@@ -9,6 +9,9 @@ namespace MegaDesk_3_AbigailKing
 {
     public class DeskQuote
     {
+
+        public static int[ , ] rushAmount = GetRushOrder();
+
         //constants
         const decimal BASE_DESK_PRICE = 200.00M;
         const decimal SURFACE_AREA_COST = 1.00M;
@@ -18,15 +21,15 @@ namespace MegaDesk_3_AbigailKing
         const decimal PINE_COST = 50.00M;
         const decimal ROSEWOOD_COST = 300.00M;
         const decimal VENEER_COST = 125.00M;
-        const decimal RUSH_3DAY_LESS_THAN_1000 = 60.00M;
-        const decimal RUSH_3DAY_1000_TO_2000 = 70.00M;
-        const decimal RUSH_3DAY_GREATER_THAN_2000 = 80.00M;
-        const decimal RUSH_5DAY_LESS_THAN_1000 = 40.00M;
-        const decimal RUSH_5DAY_1000_TO_2000 = 50.00M;
-        const decimal RUSH_5DAY_GREATER_THAN_2000 = 60.00M;
-        const decimal RUSH_7DAY_LESS_THAN_1000 = 30.00M;
-        const decimal RUSH_7DAY_1000_TO_2000 = 35.00M;
-        const decimal RUSH_7DAY_GREATER_THAN_2000 = 40.00M;
+        decimal RUSH_3DAY_LESS_THAN_1000 = rushAmount[0,0];
+        decimal RUSH_3DAY_1000_TO_2000 = rushAmount[0,1];
+        decimal RUSH_3DAY_GREATER_THAN_2000 = rushAmount[0,2];
+        decimal RUSH_5DAY_LESS_THAN_1000 = rushAmount[1,0];
+        decimal RUSH_5DAY_1000_TO_2000 = rushAmount[1,1];
+        decimal RUSH_5DAY_GREATER_THAN_2000 = rushAmount[1,2];
+        decimal RUSH_7DAY_LESS_THAN_1000 = rushAmount[2,0];
+        decimal RUSH_7DAY_1000_TO_2000 = rushAmount[2,1];
+        decimal RUSH_7DAY_GREATER_THAN_2000 = rushAmount[2,2];
 
         //enums
         public enum Delivery
@@ -137,31 +140,24 @@ namespace MegaDesk_3_AbigailKing
             return FINAL_PRICE;
         }
 
-        public static void GetRushOrder()
+        public static int[ , ] GetRushOrder()
         {
-            StreamReader reader = new StreamReader(@"rushOrderPrices.txt");
+           string[] shipping = File.ReadAllLines(@"rushOrderPrices.txt");
 
-            List<string[]> grid = new List<string[]>();
+            int[,] price = new int[3, 3];
 
-            while (reader.EndOfStream == false)
+            int k = 0;
+
+            for (int i = 0; i < 3; i++)
             {
-                string values = reader.ReadLine();
-                //grid.Add(values);
-
-                //if (values.Length =< 3)
-                //{
-
-                //}
+                for (int j = 0; j < 3; j++)
+                {
+                    price[i, j] = Int32.Parse(shipping[k]);
+                    k++;
+                }
             }
-            reader.Close();
 
-            //string[] lines = File.ReadAllLines(@"rushOrderPrices.txt");
-
-            //List<string[]> grid = new List<string[]>();
-
-            //populate the grid
-            //foreach (var line in lines) grid.Add(lines.Rea);
-
+            return price;
         }
     }
 }
