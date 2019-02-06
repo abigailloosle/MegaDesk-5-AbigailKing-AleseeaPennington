@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MegaDesk_3_AbigailKing
 {
     public partial class MainMenu : Form
     {
+        private DeskQuote _deskQuote;
+
         public MainMenu()
         {
             InitializeComponent();
