@@ -7,7 +7,7 @@
       "SurfaceMaterial": 2
     },
     "CustomerName": "Joseph",
-    "QuoteDate": "2019-02-08T14:11:49.360673-07:00",
+    "QuoteDate": "2019-02-08T13:11:49.360673-08:00",
     "DeliveryType": 0,
     "QuoteAmount": 710.0
   },
@@ -19,8 +19,20 @@
       "SurfaceMaterial": 3
     },
     "CustomerName": "Paul",
-    "QuoteDate": "2019-02-08T14:12:11.8753509-07:00",
+    "QuoteDate": "2019-02-08T13:12:11.8753509-08:00",
     "DeliveryType": 2,
-    "QuoteAmount": 705.00
+    "QuoteAmount": 705.0
+  },
+  {
+    "Desk": {
+      "Width": 28.0,
+      "Depth": 25.0,
+      "Drawers": 4,
+      "SurfaceMaterial": 3
+    },
+    "CustomerName": "Nick Loosle",
+    "QuoteDate": "2019-02-06T14:00:24.9174669-08:00",
+    "DeliveryType": 1,
+    "QuoteAmount": 565.00
   }
 ]
