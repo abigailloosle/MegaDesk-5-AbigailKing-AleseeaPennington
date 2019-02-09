@@ -94,16 +94,16 @@ namespace MegaDesk_3_AbigailKing
                     /*I think that the error is after this...*/
                     dataGridView1.DataSource = deskQuotes.Select(d => new
                     {
-                        QuoteDate = d.QuoteDate,
-                        CustomerName = d.CustomerName,
-                        Depth = d.Desk.Depth,
-                        Width = d.Desk.Width,
-                        Drawers = d.Desk.Drawers,
-                        SurfaceMaterial = d.Desk.SurfaceMaterial,
-                        DeliveryType = d.DeliveryType,
-                        QuoteAmount = d.QuoteAmount
+                        Date = d.QuoteDate,
+                        Customer = d.CustomerName,
+                        DeskDepth = d.Desk.Depth,
+                        DeskWidth = d.Desk.Width,
+                        NumDrawers = d.Desk.Drawers,
+                        Material = d.Desk.SurfaceMaterial,
+                        Delivery = d.DeliveryType,
+                        Amount = d.QuoteAmount
                     })
-                    .Where(q => q.SurfaceMaterial.ToString() == search)
+                    .Where(q => q.Material.ToString() == search)
                     .ToList();
                     Console.WriteLine("Data Grid View 1: " + deskQuotes);
                 }
