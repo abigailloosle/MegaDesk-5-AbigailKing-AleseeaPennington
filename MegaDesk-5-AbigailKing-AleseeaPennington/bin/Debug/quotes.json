@@ -1,1 +1,26 @@
-[{"Desk":{"Width":24.0,"Depth":12.0,"Drawers":0,"SurfaceMaterial":0},"CustomerName":"test","QuoteDate":"2019-02-07T09:41:00.4606845-07:00","DeliveryType":1,"QuoteAmount":340.0},{"Desk":{"Width":24.0,"Depth":12.0,"Drawers":0,"SurfaceMaterial":1},"CustomerName":"testing","QuoteDate":"2019-02-07T09:41:11.1760207-07:00","DeliveryType":1,"QuoteAmount":440.00}]
+[
+  {
+    "Desk": {
+      "Width": 24.0,
+      "Depth": 12.0,
+      "Drawers": 3,
+      "SurfaceMaterial": 2
+    },
+    "CustomerName": "Joseph",
+    "QuoteDate": "2019-02-08T14:11:49.360673-07:00",
+    "DeliveryType": 0,
+    "QuoteAmount": 710.0
+  },
+  {
+    "Desk": {
+      "Width": 36.0,
+      "Depth": 18.0,
+      "Drawers": 7,
+      "SurfaceMaterial": 3
+    },
+    "CustomerName": "Paul",
+    "QuoteDate": "2019-02-08T14:12:11.8753509-07:00",
+    "DeliveryType": 2,
+    "QuoteAmount": 705.00
+  }
+]

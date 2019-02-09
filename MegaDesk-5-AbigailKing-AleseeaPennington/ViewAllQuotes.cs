@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDesk_3_AbigailKing
 {
@@ -35,18 +36,66 @@ namespace MegaDesk_3_AbigailKing
         {
             try
             {
-                string[] deskQuotes = File.ReadAllLines(@"quotes.txt");
+                List<DeskQuote> deskQuotes = new List<DeskQuote>();
+                Console.WriteLine("Desk Quotes: " + deskQuotes);
 
-                foreach (string deskQuote in deskQuotes)
+                using (StreamReader reader = new StreamReader(@"quotes.json"))
                 {
-                    string[] arrRow = deskQuote.Split(new char[] { ',' });
-                    dataGridView1.Rows.Add(arrRow);
+                    string allQuotes = reader.ReadToEnd();
+                    Console.WriteLine("All Quotes: " + allQuotes);
+
+                    deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(allQuotes);
+                    Console.WriteLine("Desk Quotes: " + deskQuotes);
+
+                    /*I think that the error is after this...*/
+                    dataGridView1.DataSource = deskQuotes.Select(d => new
+                    {
+                        QuoteDate = d.QuoteDate,
+                        CustomerName = d.CustomerName,
+                        Depth = d.Desk.Depth,
+                        Width = d.Desk.Width,
+                        Drawers = d.Desk.Drawers,
+                        SurfaceMaterial = d.Desk.SurfaceMaterial,
+                        DeliveryType = d.DeliveryType,
+                        QuoteAmount = d.QuoteAmount
+                    }).ToList();
+                    Console.WriteLine("Data Grid View 1: " + deskQuotes);
                 }
             }
             catch (FileNotFoundException)
             {
                 MessageBox.Show("No desk quotes have been created yet.");
             }
+            
         }
     }
 }
+
+
+
+
+
+/*List<DeskQuote> deskQuotes = new List<DeskQuote>();
+
+using (StreamReader reader = new StreamReader(@"quotes.json"))
+{
+    Console.WriteLine("Reader: " + reader);
+
+    string allQuotes = reader.ReadToEnd();
+    Console.WriteLine("All Quotes: " + allQuotes);
+
+    deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(allQuotes);*/
+/*Console.WriteLine(allQuotes.Desk);*/
+
+
+/*Console.WriteLine("Desk Quotes: " + deskQuotes);
+
+var convertedJson = JsonConvert.SerializeObject(deskQuotes);
+Console.WriteLine(" Converted Json: " + convertedJson);*/
+
+/*foreach (string "Desk" in convertedJson)
+{
+    string[] arrRow = convertedJson.Split(new char[] { ',' });
+    dataGridView1.Rows.Add(arrRow);
+}*/
+/*}*/

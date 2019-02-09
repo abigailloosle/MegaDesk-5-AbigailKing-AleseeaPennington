@@ -116,13 +116,10 @@ namespace MegaDesk_3_AbigailKing
 
                 }
                 deskQuotes.Add(deskQuote);
-                var convertedJson = JsonConvert.SerializeObject(deskQuotes);
+                var convertedJson = JsonConvert.SerializeObject(deskQuotes, Formatting.Indented);
 
                 File.WriteAllText(@"quotes.json", convertedJson);
             }
-
-            
-
 
             /*using (StreamWriter streamWriter = File.AppendText(quotesFile))
             {
