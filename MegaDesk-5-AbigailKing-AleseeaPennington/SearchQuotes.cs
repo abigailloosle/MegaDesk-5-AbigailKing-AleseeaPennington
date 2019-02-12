@@ -27,7 +27,7 @@ namespace MegaDesk_3_AbigailKing
 
             comboSurfaceSearch.DataSource = materials;
 
-            comboSurfaceSearch.SelectedIndex = -1;
+            //comboSurfaceSearch.SelectedIndex = -1;
         }
 
         private void btnCancelSearch_Click(object sender, EventArgs e)
@@ -43,38 +43,9 @@ namespace MegaDesk_3_AbigailKing
             mainMenu.Show();
         }
 
-        
+
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-           /* try
-            {
-
-                dataGridView1.Rows.Clear();
-
-                string[] deskQuotes = File.ReadAllLines(@"quotes.txt");
-
-                foreach (string deskQuote in deskQuotes)
-                {
-                    string[] arrRow = deskQuote.Split(new char[] { ',' });
-
-                    foreach (string text in arrRow)
-                    {
-                        if (text == comboSurfaceSearch.SelectedValue.ToString())
-                        {
-                            dataGridView1.Rows.Add(arrRow);
-                        }
-                    };
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                MessageBox.Show("No desk quotes have been created yet.");
-            }*/
-        }
-
-        private void SearchQuotes_Load(object sender, EventArgs e)
         {
             try
             {
@@ -84,7 +55,7 @@ namespace MegaDesk_3_AbigailKing
 
                 using (StreamReader reader = new StreamReader(@"quotes.json"))
                 {
-                    string search = comboSurfaceSearch.SelectedValue.ToString();
+                    var search = (Desk.Surface)comboSurfaceSearch.SelectedValue;
                     string allQuotes = reader.ReadToEnd();
                     //Console.WriteLine("All Quotes: " + allQuotes);
 
@@ -103,9 +74,9 @@ namespace MegaDesk_3_AbigailKing
                         Delivery = d.DeliveryType,
                         Amount = d.QuoteAmount
                     })
-                    .Where(q => q.Material.ToString() == search)
+                    .Where(q => q.Material == search)
                     .ToList();
-                   // Console.WriteLine("Data Grid View 1: " + deskQuotes);
+                    // Console.WriteLine("Data Grid View 1: " + deskQuotes);
                 }
             }
             catch (FileNotFoundException)
@@ -113,5 +84,31 @@ namespace MegaDesk_3_AbigailKing
                 MessageBox.Show("No desk quotes have been created yet.");
             }
         }
+    /* try
+     {
+
+         dataGridView1.Rows.Clear();
+
+         string[] deskQuotes = File.ReadAllLines(@"quotes.txt");
+
+         foreach (string deskQuote in deskQuotes)
+         {
+             string[] arrRow = deskQuote.Split(new char[] { ',' });
+
+             foreach (string text in arrRow)
+             {
+                 if (text == comboSurfaceSearch.SelectedValue.ToString())
+                 {
+                     dataGridView1.Rows.Add(arrRow);
+                 }
+             };
+         }
+     }
+     catch (FileNotFoundException)
+     {
+         MessageBox.Show("No desk quotes have been created yet.");
+     }*/
+
     }
 }
+

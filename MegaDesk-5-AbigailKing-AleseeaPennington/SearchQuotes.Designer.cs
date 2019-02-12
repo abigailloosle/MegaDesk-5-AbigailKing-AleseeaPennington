@@ -30,14 +30,6 @@
         {
             this.btnCancelSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Quote_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desk_Width = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desk_Depth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num_Drawers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surface_Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delivery = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quote_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.comboSurfaceSearch = new System.Windows.Forms.ComboBox();
@@ -49,7 +41,7 @@
             // 
             this.btnCancelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelSearch.Location = new System.Drawing.Point(737, 487);
-            this.btnCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelSearch.Name = "btnCancelSearch";
             this.btnCancelSearch.Size = new System.Drawing.Size(333, 108);
             this.btnCancelSearch.TabIndex = 0;
@@ -61,60 +53,11 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Quote_Date,
-            this.Customer_Name,
-            this.desk_Width,
-            this.desk_Depth,
-            this.num_Drawers,
-            this.surface_Material,
-            this.delivery,
-            this.quote_Amount});
             this.dataGridView1.Location = new System.Drawing.Point(39, 97);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1124, 369);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // Quote_Date
-            // 
-            this.Quote_Date.HeaderText = "Quote Date";
-            this.Quote_Date.Name = "Quote_Date";
-            // 
-            // Customer_Name
-            // 
-            this.Customer_Name.HeaderText = "Customer Name";
-            this.Customer_Name.Name = "Customer_Name";
-            // 
-            // desk_Width
-            // 
-            this.desk_Width.HeaderText = "Desk Width";
-            this.desk_Width.Name = "desk_Width";
-            // 
-            // desk_Depth
-            // 
-            this.desk_Depth.HeaderText = "Desk Depth";
-            this.desk_Depth.Name = "desk_Depth";
-            // 
-            // num_Drawers
-            // 
-            this.num_Drawers.HeaderText = "Number of Drawers";
-            this.num_Drawers.Name = "num_Drawers";
-            // 
-            // surface_Material
-            // 
-            this.surface_Material.HeaderText = "Surface Material";
-            this.surface_Material.Name = "surface_Material";
-            // 
-            // delivery
-            // 
-            this.delivery.HeaderText = "Delivery Type";
-            this.delivery.Name = "delivery";
-            // 
-            // quote_Amount
-            // 
-            this.quote_Amount.HeaderText = "Desk Price";
-            this.quote_Amount.Name = "quote_Amount";
             // 
             // label1
             // 
@@ -143,7 +86,7 @@
             this.comboSurfaceSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSurfaceSearch.FormattingEnabled = true;
             this.comboSurfaceSearch.Location = new System.Drawing.Point(317, 23);
-            this.comboSurfaceSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboSurfaceSearch.Margin = new System.Windows.Forms.Padding(4);
             this.comboSurfaceSearch.Name = "comboSurfaceSearch";
             this.comboSurfaceSearch.Size = new System.Drawing.Size(359, 44);
             this.comboSurfaceSearch.TabIndex = 6;
@@ -151,7 +94,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(703, 17);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(197, 52);
             this.btnSearch.TabIndex = 7;
@@ -170,11 +113,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancelSearch);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchQuotes_FormClosing);
-            this.Load += new System.EventHandler(this.SearchQuotes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,14 +127,6 @@
 
         private System.Windows.Forms.Button btnCancelSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quote_Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desk_Width;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desk_Depth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn num_Drawers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surface_Material;
-        private System.Windows.Forms.DataGridViewTextBoxColumn delivery;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quote_Amount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboSurfaceSearch;
